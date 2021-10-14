@@ -23,7 +23,12 @@
   grid-auto-rows: 183px;
 }
 
-.subcard {
+
+.subcard{
+  width: var(--card_width);
+  height: var(--card_height);
+}
+.subcard--init {
   width: var(--card_width);
   height: var(--card_height);
 
@@ -31,34 +36,41 @@
   align-items: center;
   border-radius: 15px;
   color: white;
-  &--inner {
+  // &--inner {
+  //   position: absolute;
+  //   background: var(--card-background);
+  //   z-index: 22;
+  //   transition: 0.2s height linear;
+    // &:hover {
 
-    position: absolute;
-    // width: var(--card_width_hover);
-    // height: var(--card_height_hover);
-
-    // color: #fff;
-    background: var(--card-background);
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-    z-index: 22;
-    transition: 0.2s height linear;
-    &:hover {
-      z-index: 10;
-      position: relative;
-      left: calc(-1 * var(--grid-gap));
-      width: var(--card_width_hover);
-      height: var(--card_height_hover);
-
-    }
-  }
+    // }
+  
 }
+.subcard--hover {
+  display: none;
+}
+.subcard:hover >.subcard--init{
+  display: none;
+}
+
+.subcard--hover{
+  z-index: 10;
+  position: relative;
+  left: calc(-1 * var(--grid-gap));
+  width: var(--card_width_hover);
+  height: var(--card_height_hover);
+}
+
+.subcard:hover > .subcard--hover {
+  display: inline;
+
+}
+
 .sub-image {
   width: var(--img_size);
   height: var(--img_size);
   padding: var(--img_padding);
-  border-radius: 15px;
+  border-radius: 5px;
   &.hover {
     width: var(--img_size_hover);
     height: var(--img_size_hover);
@@ -81,4 +93,3 @@ body {
 .sub-stars {
   color: #ffc107;
 }
-
